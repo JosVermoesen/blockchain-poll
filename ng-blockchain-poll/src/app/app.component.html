@@ -1,0 +1,63 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand mr-auto" href="#">Metamask Blockchain Polls</a>
+  <button
+    type="button"
+    class="btn btn-secondary"
+    (click)="showFormCreatePoll = !showFormCreatePoll"
+  >
+    {{ createPollCaption }}
+  </button>
+</nav>
+
+<section class="bg-light text-center">
+  <h1>BlockChain-Poll-DemoApp</h1>
+  <p class="lead text-muted">Powered By Rinkeby and Angular 13</p>
+</section>
+
+<app-poll-create
+  *ngIf="showFormCreatePoll"
+  (pollCreated)="handlePollCreate($event)"
+></app-poll-create>
+
+<section id="poll-history">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex">
+        <div class="container poll-list">
+          <div class="col-ld-5">
+            <div *ngIf="!showFormCreatePoll">
+              <app-poll
+                *ngFor="let poll of polls | async"
+                [question]="poll.question"
+                [voted]="poll.voted"
+                [votes]="poll.results"
+                [pollImage]="poll.thumbnail"
+                (click)="setActivePoll(poll)"
+              ></app-poll>
+            </div>
+          </div>
+        </div>
+
+        <div class="container poll-split">
+          <div class="col-ld-1"></div>
+        </div>
+
+        <div class="container poll-detail">
+          <div class="col-ld-5">
+            <div *ngIf="!showFormCreatePoll">
+              <app-poll-vote
+                *ngIf="activePoll"
+                [id]="activePoll.id"
+                [voted]="activePoll.voted"
+                [question]="activePoll.question"
+                [options]="activePoll.options"
+                [results]="activePoll.results"
+                (pollVoted)="handlePollVote($event)"
+              ></app-poll-vote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
