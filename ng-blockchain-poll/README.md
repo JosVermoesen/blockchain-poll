@@ -209,8 +209,6 @@ contract PollContract {
 }
 ```
 
-After compiling in remix do not forget to copy the ABI and paste it into the contractABI.json file of the Angular client project.
-
 ## Angular Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

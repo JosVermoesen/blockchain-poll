@@ -7,7 +7,7 @@ import { Contract } from 'web3-eth-contract';
 // const contractAbi = require('./contractABI.json');
 
 // Rinkeby
-const contractAbi = require('./abi.json');
+const contractAbi = require('./contractABI.json');
 
 declare var window: any;
 
@@ -18,11 +18,8 @@ export class Web3Service {
   private web3!: Web3;
   private contract!: Contract;
 
-  // Localhost Ganache UI
-  // private contractAddress = '0xEBb65147DE9c41275D43938B4c77B43499EAAAdf';
-
-  // Rinkeby
-  private contractAddress = '0xae2B29cF0c92b0854c2c0de8C09efA97410A0c31';
+  // Görli
+  private contractAddress = '0x3bf420dFb1b6E50d17aA7EdFBFe413e6f3695aD1';
 
   constructor(private zone: NgZone) {
     if (window.web3) {
