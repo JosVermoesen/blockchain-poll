@@ -1,6 +1,6 @@
 # NgBlockchainPoll
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5 and upgraded november 12, 2022 to version 14.2.10 with command: `ng update @angular/core@14 @angular/cli@14`
 
 ## Getting started for developers
 

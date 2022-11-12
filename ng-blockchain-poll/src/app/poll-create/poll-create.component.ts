@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { PollForm } from '../types';
 
 @Component({
@@ -8,11 +8,11 @@ import { PollForm } from '../types';
   styleUrls: ['./poll-create.component.scss'],
 })
 export class PollCreateComponent {
-  pollForm: FormGroup;
+  pollForm: UntypedFormGroup;
 
   @Output() pollCreated: EventEmitter<PollForm> = new EventEmitter();
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     this.pollForm = this.fb.group({
       question: this.fb.control('', [Validators.required]),
       image: this.fb.control(''),

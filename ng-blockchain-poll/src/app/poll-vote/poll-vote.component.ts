@@ -6,7 +6,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import * as ApexCharts from 'apexcharts';
 
 import { PollVote } from '../types';
@@ -30,9 +30,9 @@ export class PollVoteComponent implements AfterViewInit {
 
   @Output() pollVoted: EventEmitter<PollVote> = new EventEmitter();
 
-  voteForm!: FormGroup;
+  voteForm!: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     this.voteForm = this.fb.group({
       selected: this.fb.control('', [Validators.required]),
     });
