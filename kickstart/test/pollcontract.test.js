@@ -3,7 +3,7 @@ const ganache = require('ganache-cli');
 const Web3 = require('web3');
 const web3 = new Web3(ganache.provider());
 
-const { interface, bytecode } = require('../pollcontract/compile');
+const { interface, bytecode } = require('../bc-poll/compile');
 
 let accounts;
 let pollContract;

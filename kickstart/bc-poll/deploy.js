@@ -2,10 +2,9 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
 const { interface, bytecode } = require('./compile');
 
-const provider = new HDWalletProvider(
-  'your 12 words',
-  'your https://rinkeby.infura.io/whatever'
-);
+const secrets = require('./../secrets/secrets');
+const provider = new HDWalletProvider(secrets.metamask, secrets.görli);
+
 const web3 = new Web3(provider);
 
 const deploy = async () => {
@@ -25,3 +24,8 @@ deploy();
 
 // Contract was deployed to:
 // 0xae2B29cF0c92b0854c2c0de8C09efA97410A0c31
+
+// Görli instead of Rinkeby from 11/11/2022
+// 0x3bf420dFb1b6E50d17aA7EdFBFe413e6f3695aD1 12/11/2022
+//
+

@@ -1,4 +1,4 @@
-# KickTesting
+# KickStartPoll
 
 This project was generated with npm.
 Make directory and run `npm init` inside the project root, give it a name, accept most proposals, just answer for test script: mocha
@@ -34,26 +34,28 @@ install command:
 - Be sure using mocha for test scripts in package.json file.
 - `npm run test`
 
-## Rinkeby
+## Görli
 
-https://faucets.chain.link/rinkeby
+https://faucets.chain.link/goerli
 
-https://rinkeby.etherscan.io/
-
-### 10 test LINK
-
-Transaction Hash:
-0x8a476a8363ec299ef48b1efa244736abc7b58cb6888079e57c7c85e8dc5a1ff3
-
-### 0.1 test ETH
-
-Transaction Hash:
-0xb8695daba8424a86c8595ddfa916fa22f68dbd3ef0b4ed0ae89243a562eb51fe
+https://goerli.etherscan.io/
 
 ## Infura API
 
-Getting access to the Rinkeby network
+Getting access to the API network
 https://infura.io
+
+## Your secrets for deploy.js
+
+Add your personal secrets key and account to secrets.js
+
+```js
+const metamask = "put here the string with your 12 secrets words";
+
+const görli = "your goerli.infura.io https string";
+
+module.exports = { metamask, görli };
+```
 
 ### NPM package to install
 
