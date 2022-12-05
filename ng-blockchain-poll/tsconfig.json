@@ -3,13 +3,27 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "stream": ["./node_modules/stream-browserify"],
-      "assert": ["./node_modules/assert"],
-      "crypto": ["./node_modules/crypto-browserify"],
-      "http": ["./node_modules/stream-http"],
-      "https": ["./node_modules/https-browserify"],
-      "os": ["./node_modules/os-browserify"],
-      "url": ["./node_modules/url"]
+      "stream": [
+        "./node_modules/stream-browserify"
+      ],
+      "assert": [
+        "./node_modules/assert"
+      ],
+      "crypto": [
+        "./node_modules/crypto-browserify"
+      ],
+      "http": [
+        "./node_modules/stream-http"
+      ],
+      "https": [
+        "./node_modules/https-browserify"
+      ],
+      "os": [
+        "./node_modules/os-browserify"
+      ],
+      "url": [
+        "./node_modules/url"
+      ]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -25,9 +39,13 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2020",
+    "target": "ES2022",
     "module": "es2020",
-    "lib": ["es2020", "dom"]
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
