@@ -25,7 +25,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `npm i bootstrap bootswatch` to install bootstrap and the open source bootswatch themes
 
-#### set in file styles.scss your prefered theme:
+#### set in file styles.scss your prefered theme
 
 ```scss
 @import "~bootswatch/dist/sandstone/bootstrap.min.css";
@@ -45,7 +45,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `npm i web3 web3-eth-contract` to install the [web3 ethereum](https://github.com/topics/ethereum?q=ethereum%2Fweb3) service component and the web3 contract package.
 
-#### add in file polyfill.ts:
+#### add in file polyfill.ts
 
 ```ts
 import "zone.js"; // Included with Angular CLI.
@@ -58,7 +58,7 @@ window.process = process;
 global.Buffer = global.Buffer || Buffer;
 ```
 
-#### add in file angular.json extra options;
+#### add in file angular.json extra options
 
 ```json
 "allowedCommonJsDependencies": [
@@ -67,7 +67,7 @@ global.Buffer = global.Buffer || Buffer;
 ],
 ```
 
-#### for building, increase budgets in angular.json;
+#### for building, increase budgets in angular.json
 
 ```json
 "budgets": [
@@ -97,7 +97,7 @@ global.Buffer = global.Buffer || Buffer;
 - or just install all in one command stroke:
   `npm i stream-browserify assert crypto-browserify stream-http https-browserify os-browserify url`
 
-#### add in tsconfig.json:
+#### add in tsconfig.json
 
 ```json
 "compilerOptions": {
@@ -126,7 +126,7 @@ global.Buffer = global.Buffer || Buffer;
     },
 ```
 
-#### poll.sol code to compile and deploy with Remix:
+#### poll.sol code to compile and deploy with Remix
 
 ```c++
 // SPDX-License-Identifier: MIT
