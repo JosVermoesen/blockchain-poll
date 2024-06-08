@@ -4,7 +4,7 @@ This project was generated with npm.
 Make directory and run `npm init` inside the project root, give it a name, accept most proposals, just answer for test script: mocha
 
 ```json
-"name": "kicktesting",
+"name": "kickstart",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -23,10 +23,15 @@ Make directory and run `npm init` inside the project root, give it a name, accep
 install command:
 `npm i ganache-cli mocha solc@0.4.26 fs-extra web3`
 
-## Compiling
+## Compiling 1
 
 - Move into ethereum directory
 - `node compile.js`
+
+## Compiling 2
+
+- Move into ethereum directory
+- `node compile4JSON.js`
 
 ## Testing
 
@@ -34,16 +39,16 @@ install command:
 - Be sure using mocha for test scripts in package.json file.
 - `npm run test`
 
-## Görli
+## Sepolia
 
-https://faucets.chain.link/goerli
-
-https://goerli.etherscan.io/
+- Get daily free ETH on <https://faucets.chain.link/sepolia>
+- Testnet on <https://sepolia.etherscan.io/>
+- Check older testnet on <https://goerli.etherscan.io/> (deprecated)
 
 ## Infura API
 
 Getting access to the API network
-https://infura.io
+<https://infura.io>
 
 ## Your secrets for deploy.js
 
@@ -52,9 +57,9 @@ Add your personal secrets key and account to secrets.js
 ```js
 const metamask = "put here the string with your 12 secrets words";
 
-const görli = "your goerli.infura.io https string";
+const sepolia = "your goerli.infura.io https string";
 
-module.exports = { metamask, görli };
+module.exports = { metamask, sepolia };
 ```
 
 ### NPM package to install
@@ -64,8 +69,8 @@ install command:
 
 ## Varia
 
-https://andersbrownworth.com/blockchain/hash
+<https://andersbrownworth.com/blockchain/hash>
 
-https://eth-converter.com/
+<https://eth-converter.com/>
 
-https://iancoleman.io/bip39/
+<https://iancoleman.io/bip39/>

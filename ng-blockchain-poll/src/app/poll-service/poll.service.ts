@@ -75,7 +75,7 @@ export class PollService {
         id: 1,
         question: 'Do you like dogs or cats?',
         thumbnail:
-          'https://img1.thelist.com/img/gallery/dogs-vs-cats-survey-reveals-which-pet-the-majority-of-people-prefer/intro-1608217241.jpg',
+          'https://blockchain-poll.vsoft.be/images/Dog-and-cat.jpg',
         results: [0, 5, 7],
         options: ['Cats', 'Dogs', 'None'],
         voted: true,
@@ -84,34 +84,25 @@ export class PollService {
         id: 2,
         question: 'Best month for summer holidays?',
         thumbnail:
-          'https://www.premier-travel.co.uk/__data/assets/image/0003/570378/Summer-Sun.jpg',
+          'https://blockchain-poll.vsoft.be/images/holiday.jpg',
         results: [1, 6, 4],
         options: ['June', 'July', 'August'],
         voted: false,
-      },
+      }
       {
         id: 3,
-        question: 'Best life insurance company in Belgium?',
-        thumbnail:
-          'https://writingviews.com/wp-content/uploads/2020/07/lifeinsurance.jpg',
-        results: [1, 6, 4],
-        options: ['Patronale Life', 'Athora', 'Vivium'],
-        voted: false,
-      },
-      {
-        id: 4,
         question: 'Your prefered breakfast?',
         thumbnail:
-          'https://themodemag.com/wp-content/uploads/2020/02/english-breakfast-fried-eggs-sausages-bacon.jpg',
+          'https://??',
         results: [1, 6, 4],
         options: ['English', 'Continental', 'Full Scottish'],
         voted: false,
       },
       {
-        id: 5,
+        id: 4,
         question: 'Your favourit hair colour?',
         thumbnail:
-          'https://www.byrdie.com/thmb/WToJxf6ubncHuvU4Hg9_HhY9LVM=/938x794/filters:fill(auto,1)/ScreenShot2020-05-15at3.45.49PM-6fa8cb8dbe314270b58a3a04f0cce8d4.png',
+          'https://??',
         results: [1, 6, 4],
         options: ['Black', 'Blond', 'Red'],
         voted: false,

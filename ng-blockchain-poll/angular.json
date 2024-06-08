@@ -23,7 +23,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": ["hash.js", "web3-utils"],
+            "allowedCommonJsDependencies": [
+              "hash.js",
+              "web3-utils",
+              "apexcharts"
+            ],
             "outputPath": "dist/ng-blockchain-poll",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -39,7 +43,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "3mb",
+                  "maximumWarning": "3.5mb",
                   "maximumError": "4mb"
                 },
                 {

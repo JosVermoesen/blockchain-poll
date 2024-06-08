@@ -19,8 +19,8 @@ export class Web3Service {
   private contract!: Contract;
 
   // Görli
-  private contractAddress = '0x3bf420dFb1b6E50d17aA7EdFBFe413e6f3695aD1';
-
+  private contractAddress = '0x8531d5814Bdc767CafbacB8b97029B9314148663';
+  
   constructor(private zone: NgZone) {
     if (window.web3) {
       this.web3 = new Web3(window.ethereum);
