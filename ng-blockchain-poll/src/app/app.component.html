@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand mr-auto" href="#">Metamask Blockchain Polls</a>
+  <a class="navbar-brand mr-auto" href="#">Metamask Blockchain</a>
   <button
     type="button"
     class="btn btn-secondary"
@@ -10,7 +10,7 @@
 </nav>
 
 <section class="bg-light text-center">
-  <h2>BlockChain-Poll Web3 DemoApp</h2>
+  <h2>Poll Contract Web3 DemoApp</h2>
   <p class="lead text-muted">Powered By Sepolia Testnet on Angular 16</p>
 </section>
 
@@ -25,6 +25,13 @@
       <div class="d-flex">
         <div class="container poll-list">
           <div class="col-ld-5">
+            <a
+              href="https://cloud.google.com/application/web3/faucet/ethereum/sepolia"
+              target="_blank"
+              class="btn btn-success"
+              >Beg Google for free ETH!</a
+            >
+
             <div *ngIf="!showFormCreatePoll">
               <app-poll
                 *ngFor="let poll of polls | async"
