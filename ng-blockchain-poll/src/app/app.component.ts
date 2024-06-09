@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PollService } from './poll-service/poll.service';
 import { Poll, PollForm, PollVote } from './types';
+import { Web3Service } from './blockchain/web3.service';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +10,20 @@ import { Poll, PollForm, PollVote } from './types';
 })
 export class AppComponent {
   showFormCreatePoll = false;
+
+  ownerIsUser = false;
+  
   createPollCaption = 'Toggle New Poll';
-
   activePoll: Poll | undefined;
-
   polls = this.ps.getPolls();
 
-  constructor(private ps: PollService) {}
+  constructor(private ps: PollService, private ws: Web3Service) {}
 
   ngOnInit() {
+    this.ws.ownerIsUser().then((result) => {
+      this.ownerIsUser = result;
+    });
+
     this.ps.onEvent('PollCreated').subscribe(() => {
       this.showFormCreatePoll = false;
       this.polls = this.ps.getPolls();

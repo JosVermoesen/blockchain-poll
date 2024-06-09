@@ -2,6 +2,8 @@
 pragma solidity ^0.4.26;
 
 contract PollContract {
+    address public owner;
+
     struct Poll {
         uint256 id;
         string question;
@@ -22,11 +24,15 @@ contract PollContract {
     event PollCreated(uint256 _pollId);
     event PollVoted(uint256 _pollId);
 
+    constructor() public {
+        owner = msg.sender;
+    }
+
     function createPoll(
         string memory _question,
         string memory _thumb,
         bytes32[] memory _options
-    ) public {
+    ) public restricted {
         require(bytes(_question).length > 0, "Empty question");
         require(_options.length > 1, "At least 2 options required");
 
@@ -44,7 +50,14 @@ contract PollContract {
         emit PollCreated(pollId);
     }
 
-    function getPoll(uint256 _pollId)
+    modifier restricted() {
+        require(msg.sender == owner);
+        _;
+    }
+
+    function getPoll(
+        uint256 _pollId
+    )
         external
         view
         returns (
@@ -81,11 +94,9 @@ contract PollContract {
         emit PollVoted(_pollId);
     }
 
-    function getVoter(address _id)
-        external
-        view
-        returns (address, uint256[] memory)
-    {
+    function getVoter(
+        address _id
+    ) external view returns (address, uint256[] memory) {
         return (voters[_id].id, voters[_id].votedIds);
     }
 

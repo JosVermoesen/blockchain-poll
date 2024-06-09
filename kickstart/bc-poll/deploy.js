@@ -23,10 +23,5 @@ const deploy = async () => {
 deploy();
 
 // Contract was deployed to:
-// 0xae2B29cF0c92b0854c2c0de8C09efA97410A0c31
-
-// Görli instead of Rinkeby from 11/11/2022
-// 0x3bf420dFb1b6E50d17aA7EdFBFe413e6f3695aD1 12/11/2022
-//
-
 // 0x8531d5814Bdc767CafbacB8b97029B9314148663 08/06/2024
+// 0xAd511E843EeEee5538be46C0a723b86fF4235df8 09/06/2024

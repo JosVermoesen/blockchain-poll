@@ -19,8 +19,8 @@ export class Web3Service {
   private contract!: Contract;
 
   // Görli
-  private contractAddress = '0x8531d5814Bdc767CafbacB8b97029B9314148663';
-  
+  private contractAddress = '0xAd511E843EeEee5538be46C0a723b86fF4235df8';
+
   constructor(private zone: NgZone) {
     if (window.web3) {
       this.web3 = new Web3(window.ethereum);
@@ -41,6 +41,23 @@ export class Web3Service {
 
   getAccount(): Promise<string> {
     return this.web3.eth.getAccounts().then((accounts) => accounts[0] || '');
+  }
+
+  async getOwner(): Promise<any> {
+    const owner = await this.call('owner');
+
+    return owner;
+  }
+
+  async ownerIsUser(): Promise<boolean> {
+    const owner = await this.call('owner');
+    const acc = await this.getAccount();
+
+    if (owner == acc) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   // executeTransaction("vote", pollId, vote)
