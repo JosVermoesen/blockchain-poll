@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-blockchain-poll:build:production"
+              "buildTarget": "ng-blockchain-poll:build:production"
             },
             "development": {
-              "browserTarget": "ng-blockchain-poll:build:development"
+              "buildTarget": "ng-blockchain-poll:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-blockchain-poll:build"
+            "buildTarget": "ng-blockchain-poll:build"
           }
         },
         "test": {
