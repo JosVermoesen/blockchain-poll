@@ -209,6 +209,30 @@ contract PollContract {
 }
 ```
 
+## Updating to latest Angular 16
+
+This app is now on Angular 16.
+
+### update app to latest Angular 16
+
+`ng update @angular/cli@16 @angular/core@16`
+
+### update from older Angular versions to the latest
+
+Follow the instructions in the [Angular Update Guide](https://update.angular.io/) to fix your app.
+
+#### npm outdated
+
+In terminal use `npm outdated` to see what packages are requiring updates and what their current and wanted versions are.
+
+This will also show you which packages are deprecated.
+
+If you want to update a package to a version newer than what is specified in your package.json, you can do so by running npm update [package-name]@[version-number].
+
+### Use latest global Angular CLI
+
+`npm i -g @angular/cli`
+
 ## Angular Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
