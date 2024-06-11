@@ -7,4 +7,6 @@
 - Kickstart: For compiling, testing and deploying
 - ng-blockchain-poll: Angular 15 app using the deployed poll blockchain
 
+https://docs.web3js.org/
+
 [BlockchainPoll]: https://blockchain-poll.vsoft.be/
