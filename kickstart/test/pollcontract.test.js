@@ -23,12 +23,12 @@ beforeEach(async () => {
 
 describe("PollContract", () => {
   it("deploys a contract", () => {
-    // console.log(accounts);
+    console.log("accounts:", "\n", accounts, "\n");
     // console.log(pollContract);
     assert.ok(pollContract.options.address);
   });
 
-  it("allows one account to create a poll", async () => {
+  it("allows only owner to create a poll", async () => {
     const resultCreate = await pollContract.methods
       .createPoll(
         "Do you like dogs or cats?",
@@ -41,10 +41,12 @@ describe("PollContract", () => {
       });
 
     const poll = await pollContract.methods.getPoll(0).call({
-      from: accounts[0],
+      from: accounts[1],
     });
 
-    console.log("poll: ", poll);
-    console.log("resultCreate: ", resultCreate);
+    console.log("getPollResult:", "\n", poll, "\n");
+    console.log("createPollResult:", "\n", resultCreate);
+
+    assert.equal(poll[1], "Do you like dogs or cats?");
   });
 });
