@@ -23,13 +23,13 @@ beforeEach(async () => {
 
 describe("PollContract", () => {
   it("deploys a contract", () => {
-    console.log("accounts:", "\n", accounts, "\n");
+    // console.log("accounts:", "\n", accounts, "\n");
     // console.log(pollContract);
     assert.ok(pollContract.options.address);
   });
 
   it("allows only owner to create a poll", async () => {
-    const resultCreate = await pollContract.methods
+    let resultCreate = await pollContract.methods
       .createPoll(
         "Do you like dogs or cats?",
         "https://blockchain-poll.vsoft.be/images/Dog-and-cat.jpg",
@@ -39,14 +39,43 @@ describe("PollContract", () => {
         from: accounts[0],
         gas: "1000000",
       });
+    // console.log("createPollResult:", "\n", resultCreate);
 
-    const poll = await pollContract.methods.getPoll(0).call({
+    let createdPoll = await pollContract.methods.getPoll(0).call({
       from: accounts[1],
     });
+    // console.log("createdPoll:", "\n", createdPoll, "\n");
+    assert.equal(createdPoll[1], "Do you like dogs or cats?");
 
-    console.log("getPollResult:", "\n", poll, "\n");
-    console.log("createPollResult:", "\n", resultCreate);
+    resultCreate = await pollContract.methods
+      .createPoll(
+        "Preferred breakfast?",
+        "https://blockchain-poll.vsoft.be/images/breakfast.jpg",
+        ["English", "Continental", "Full Scottish"].map(web3.utils.utf8ToHex)
+      )
+      .send({
+        from: accounts[0],
+        gas: "1000000",
+      });
+    // console.log("createPollResult:", "\n", resultCreate);
 
-    assert.equal(poll[1], "Do you like dogs or cats?");
+    createdPoll = await pollContract.methods.getPoll(1).call({
+      from: accounts[1],
+    });
+    // console.log("createdPoll:", "\n", createdPoll, "\n");
+    assert.equal(createdPoll[1], "Preferred breakfast?");
+
+    let voteResult = await pollContract.methods
+      .vote(0, 2)
+      .send({ from: accounts[1], gas: "1000000" });
+    // console.log("voteResult0:", "\n", voteResult, "\n");
+
+    voteResult = await pollContract.methods
+      .vote(1, 0)
+      .send({ from: accounts[1], gas: "1000000" });
+    // console.log("voteResult1:", "\n", voteResult, "\n");
+
+    totalPolls = await pollContract.methods.getTotalPolls().call();
+    console.log("getTotalPollsResult:", "\n", totalPolls, "\n");
   });
 });
