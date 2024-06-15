@@ -64,7 +64,11 @@ export class Web3Service {
   // executeTransaction("createPoll", question, thumb, opt)
   async executeTransaction(fnName: string, ...args: any[]): Promise<void> {
     const acc = await this.getAccount();
-    this.contract.methods[fnName](...args).send({ from: acc });
+    this.contract.methods[fnName](...args)
+      .send({ from: acc })
+      .on('transactionHash', (hash: any) => {
+        console.log('Transaction hash', hash);
+      });
   }
 
   async call(fnName: string, ...args: any[]) {

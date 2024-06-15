@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand mr-auto" href="#">Metamask Blockchain (Web3 v.4)</a>
+  <a class="navbar-brand mr-auto" href="#">Metamask Blockchain</a>
   <div *ngIf="ownerIsUser">
     <button
       type="button"
@@ -11,17 +11,27 @@
   </div>
   <div>
     <a
+      href="https://cloud.google.com/application/web3/faucet/ethereum/sepolia"
+      target="_blank"
+      class="btn"
+      >Google ETH</a
+    >
+
+    <a href="https://faucets.chain.link/sepolia" target="_blank" class="btn"
+      >Chainlink ETH</a
+    >
+    <a
       href="https://github.com/JosVermoesen/blockchain-poll"
       target="_blank"
       class="btn"
-      >Source code on Github</a
+      >Github Source code</a
     >
   </div>
 </nav>
 
 <section class="bg-light text-center">
-  <h2>Poll Contract Web3 DemoApp</h2>
-  <p class="lead text-muted">Powered By Sepolia Testnet on Angular 17</p>
+  <h3>Poll Contract (web3 v1.7.3)</h3>
+  <small>Powered By Sepolia Testnet on Angular 17</small>
 </section>
 
 <app-poll-create
@@ -67,20 +77,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="d-grid gap-1">
-        <a
-          href="https://cloud.google.com/application/web3/faucet/ethereum/sepolia"
-          target="_blank"
-          class="btn btn-success"
-          >Beg Google for free ETH!</a
-        >
-        <a
-          href="https://faucets.chain.link/sepolia"
-          target="_blank"
-          class="btn btn-success"
-          >Beg Chainlink (Github connected) for free ETH!</a
-        >
       </div>
     </div>
   </div>

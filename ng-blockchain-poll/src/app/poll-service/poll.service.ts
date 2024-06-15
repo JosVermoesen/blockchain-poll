@@ -12,12 +12,14 @@ export class PollService {
 
   createPoll(poll: PollForm) {
     console.log(poll);
+    const result =
     this.web3.executeTransaction(
       'createPoll',
       poll.question,
       poll.thumbnail || '',
       poll.options.map((opt) => fromAscii(opt))
     );
+    console.log(result);
   }
 
   vote(pollId: number, voteNumber: number) {
@@ -88,23 +90,23 @@ export class PollService {
         results: [1, 6, 4],
         options: ['June', 'July', 'August'],
         voted: false,
-      }
+      },      
       {
         id: 3,
-        question: 'Your prefered breakfast?',
+        question: 'Favourite hair colour?',
         thumbnail:
-          'https://??',
+          'https://blockchain-poll.vsoft.be/images/hair-colors.jpg',
         results: [1, 6, 4],
-        options: ['English', 'Continental', 'Full Scottish'],
+        options: ['Black', 'Blond', 'Red'],
         voted: false,
       },
       {
         id: 4,
-        question: 'Your favourit hair colour?',
+        question: 'Preferred breakfast?',
         thumbnail:
-          'https://??',
+          'https://blockchain-poll.vsoft.be/images/breakfast.jpg',
         results: [1, 6, 4],
-        options: ['Black', 'Blond', 'Red'],
+        options: ['English', 'Continental', 'Full Scottish'],
         voted: false,
       },
     ]).pipe(delay(2000));
