@@ -28,7 +28,7 @@ describe("PollContract", () => {
     assert.ok(pollContract.options.address);
   });
 
-  it("allows only owner to create a poll", async () => {
+  it("only owner can create polls", async () => {
     let resultCreate = await pollContract.methods
       .createPoll(
         "Do you like dogs or cats?",
@@ -43,9 +43,9 @@ describe("PollContract", () => {
 
     let createdPoll = await pollContract.methods.getPoll(0).call({
       from: accounts[1],
-    });
-    // console.log("createdPoll:", "\n", createdPoll, "\n");
+    });    
     assert.equal(createdPoll[1], "Do you like dogs or cats?");
+    // console.log("createdPoll:", "\n", createdPoll, "\n");
 
     resultCreate = await pollContract.methods
       .createPoll(
@@ -62,9 +62,9 @@ describe("PollContract", () => {
     createdPoll = await pollContract.methods.getPoll(1).call({
       from: accounts[1],
     });
-    // console.log("createdPoll:", "\n", createdPoll, "\n");
     assert.equal(createdPoll[1], "Preferred breakfast?");
-
+    // console.log("createdPoll:", "\n", createdPoll, "\n");
+    
     let voteResult = await pollContract.methods
       .vote(0, 2)
       .send({ from: accounts[1], gas: "1000000" });
@@ -76,6 +76,6 @@ describe("PollContract", () => {
     // console.log("voteResult1:", "\n", voteResult, "\n");
 
     totalPolls = await pollContract.methods.getTotalPolls().call();
-    console.log("getTotalPollsResult:", "\n", totalPolls, "\n");
+    assert.equal(totalPolls, 2);
   });
 });
