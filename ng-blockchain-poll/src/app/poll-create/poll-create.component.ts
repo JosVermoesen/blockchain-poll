@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { PollForm } from '../types';
+import { PollForm } from '../poll-vote/models/types';
 
 @Component({
   selector: 'app-poll-create',

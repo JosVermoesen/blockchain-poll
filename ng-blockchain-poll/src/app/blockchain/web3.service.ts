@@ -1,6 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
-import { Observable } from 'rxjs';
-import Web3 from 'web3';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Web3 } from 'web3';
 import { Contract } from 'web3-eth-contract';
 
 // Localhost Ganache UI
@@ -15,15 +15,15 @@ declare var window: any;
   providedIn: 'root',
 })
 export class Web3Service {
-  private web3!: Web3;
-  private contract!: Contract;
+  private isBusySource = new BehaviorSubject<boolean | null>(false);
+  isBusy$ = this.isBusySource.asObservable();
 
-  // Görli
+  private web3 = new Web3(window.ethereum);
+  private contract!: any;
   private contractAddress = '0xAd511E843EeEee5538be46C0a723b86fF4235df8';
 
   constructor(private zone: NgZone) {
     if (window.web3) {
-      this.web3 = new Web3(window.ethereum);
       this.contract = new this.web3.eth.Contract(
         contractAbi,
         this.contractAddress
@@ -32,11 +32,22 @@ export class Web3Service {
       window.ethereum
         .request({ method: 'eth_requestAccounts' })
         .catch((err: any) => {
-          console.log(err);
+          // console.log(err);
+          alert(err);
         });
     } else {
-      console.warn('Metamask not found. Install or enable Metamask.');
+      alert(
+        'Metamask not found. Install or enable Metamask. Be sure to run Sepolia test network'
+      );
     }
+  }
+
+  setBusy(isBusy: boolean) {
+    this.isBusySource.next(isBusy);
+  }
+
+  getBusy() {
+    return this.isBusySource.value;
   }
 
   getAccount(): Promise<string> {

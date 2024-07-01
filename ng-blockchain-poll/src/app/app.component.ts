@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PollService } from './poll-service/poll.service';
-import { Poll, PollForm, PollVote } from './types';
+import { Poll, PollForm, PollVote } from './poll-vote/models/types';
 import { Web3Service } from './blockchain/web3.service';
 
 @Component({

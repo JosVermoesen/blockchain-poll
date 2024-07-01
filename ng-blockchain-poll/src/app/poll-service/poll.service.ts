@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Web3Service } from '../blockchain/web3.service';
-import { Poll, PollForm } from '../types';
+import { Poll, PollForm } from '../poll-vote/models/types';
 import { fromAscii, toAscii } from 'web3-utils';
 import { delay, Observable, of } from 'rxjs';
 

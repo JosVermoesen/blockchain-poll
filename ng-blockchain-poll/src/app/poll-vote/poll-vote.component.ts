@@ -11,9 +11,9 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import * as ApexCharts from 'apexcharts';
+import ApexCharts from 'apexcharts';
 
-import { PollVote } from '../types';
+import { PollVote } from './models/types';
 
 @Component({
   selector: 'app-poll-vote',

@@ -26,7 +26,11 @@
             "allowedCommonJsDependencies": [
               "hash.js",
               "web3-utils",
-              "apexcharts"
+              "apexcharts",
+              "crc-32",
+              "@ethereumjs/rlp",
+              "setimmediate",
+              "cross-fetch"
             ],
             "outputPath": "dist/ng-blockchain-poll",
             "index": "src/index.html",
