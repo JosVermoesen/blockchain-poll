@@ -21,7 +21,7 @@ Make directory and run `npm init` inside the project root, give it a name, accep
 ## NPM packages used for this app
 
 install command:
-`npm i ganache-cli mocha solc@0.4.26 fs-extra web3@1.7.3`
+`npm i ganache mocha solc@0.4.26 fs-extra web3@4.10.0`
 
 ## Compiling 1
 
