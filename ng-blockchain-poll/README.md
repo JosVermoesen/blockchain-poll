@@ -209,13 +209,13 @@ contract PollContract {
 }
 ```
 
-## Updating to latest Angular 17
+## Updating to latest Angular 18
 
-This app is now on Angular 17.
+This app is now on Angular 18.
 
 ### update app to latest Angular 17
 
-`ng update @angular/cli@17 @angular/core@17`
+`ng update @angular/cli@18 @angular/core@18`
 
 ### update from older Angular versions to the latest
 
