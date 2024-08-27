@@ -1,5 +1,7 @@
 # KickStartPoll
 
+The way to code a solidity contract, compile it, test it and finally deploy it, is inspired from [Stephen Grider's](https://www.udemy.com/user/sgslo/) course "Ethereum and Solidity: The Complete Developer's Guide"
+
 This project was generated with npm.
 Make directory and run `npm init` inside the project root, give it a name, accept most proposals, just answer for test script: mocha
 
